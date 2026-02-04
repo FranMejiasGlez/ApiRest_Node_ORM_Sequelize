@@ -1,12 +1,12 @@
 import express from "express";
-import productoRoutes from "./routes/productosRoutes.js";
 import { sequelize } from "./config/db.js";
+import routes from "./routes/index.js";
 
 const app = express();
 app.use(express.json());
 
-// Rutas
-app.use("/productos", productoRoutes);
+// Rutas API (generadas por AutoCRUD)
+app.use("/api", routes);
 
 // Sincronizar base de datos
 (async () => {

@@ -1,0 +1,17 @@
+import { DataTypes } from "sequelize";
+import { sequelize } from "../config/db.js";
+
+export const Log = sequelize.define("Log", {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    log: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    }
+}, {
+    tableName: "logs",
+    timestamps: true
+});
